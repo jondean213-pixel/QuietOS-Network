@@ -19,6 +19,13 @@ from .transfer import (MemoryTransport, FileSender, FileReceiver,
                        IntegrityError, CHUNK_SIZE)
 from .transport import (NetworkNode, TransportError, HandshakeError,
                         DEFAULT_PORT, encrypt_frame, decrypt_frame)
+from .spamshield import (Verdict, RelayDecision, CallContext, MessageContext,
+                         Classification, SpamShield, normalize_number,
+                         shielded_send, CALL_EVENT, MESSAGE_EVENT, VIP_NAMES)
+from .relay import (RelayEvent, RelayRouter, EnvelopeError, OutboxEntry,
+                    MISSED_CALL, SMS, EMAIL_ALERT, ENVELOPE_VERSION,
+                    missed_call_event, sms_event, email_alert_event,
+                    seal_envelope, open_envelope)
 
 __all__ = [
     "Bucket", "TokenCoordinator", "DEFAULT_LEASE_SECONDS",
@@ -29,4 +36,11 @@ __all__ = [
     "IntegrityError", "CHUNK_SIZE",
     "NetworkNode", "TransportError", "HandshakeError",
     "DEFAULT_PORT", "encrypt_frame", "decrypt_frame",
+    "Verdict", "RelayDecision", "CallContext", "MessageContext",
+    "Classification", "SpamShield", "normalize_number",
+    "shielded_send", "CALL_EVENT", "MESSAGE_EVENT", "VIP_NAMES",
+    "RelayEvent", "RelayRouter", "EnvelopeError", "OutboxEntry",
+    "MISSED_CALL", "SMS", "EMAIL_ALERT", "ENVELOPE_VERSION",
+    "missed_call_event", "sms_event", "email_alert_event",
+    "seal_envelope", "open_envelope",
 ]
